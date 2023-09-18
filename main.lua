@@ -237,6 +237,25 @@ function love.update(dt)
         player1.dy = 0
     end
 
+    --my code 
+    --AI implementation in player 1
+    
+     if ball.y >= player1.y then
+         if gameState == 'play' then
+             player1.dy = PADDLE_SPEED
+        end
+        
+    elseif ball.dy <= player1.dy then
+
+        if gameState == 'play' then
+            player1.dy = -PADDLE_SPEED
+        end
+        
+    else
+        player1.dy = 0
+        
+    end
+
     -- player 2
     if love.keyboard.isDown('up') then
         player2.dy = -PADDLE_SPEED
