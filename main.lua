@@ -240,19 +240,21 @@ function love.update(dt)
     --my code 
     --AI implementation in player 1
     
-     if ball.y >= player2.y then
-         if gameState == 'play' then
-             player2.dy = PADDLE_SPEED
+    if ball.y >= player1.y then
+ 
+        if gameState == 'play' then
+            player1.dy = PADDLE_SPEED/2
         end
+
         
-    elseif ball.dy <= player2.dy then
+    elseif ball.y <= player1.y then
 
         if gameState == 'play' then
-            player2.dy = -PADDLE_SPEED
+            player1.dy = -PADDLE_SPEED/2
         end
         
     else
-        player2.dy = 0
+        player1.dy = 0
         
     end
 
